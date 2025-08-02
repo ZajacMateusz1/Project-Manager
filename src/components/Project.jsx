@@ -1,3 +1,3 @@
 export default function Projct() {
-  return <main className="grow"></main>;
+  return <main className="flex-[4]"></main>;
 }
