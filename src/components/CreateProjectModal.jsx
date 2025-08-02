@@ -1,8 +1,20 @@
+import { useRef, useImperativeHandle } from "react";
 import { createPortal } from "react-dom";
 import InputElement from "./inputElement.jsx";
-export default function CreateProjectModal() {
+export default function CreateProjectModal({ ref }) {
+  const dialog = useRef();
+  useImperativeHandle(ref, () => {
+    return {
+      open() {
+        dialog.current.showModal();
+      },
+    };
+  });
   return createPortal(
-    <dialog className="mt-3 lg:mt-6 p-2 lg:p-4 border border-[#333] rounded-md bg-stone-50 text-center text-xs lg:text-lg">
+    <dialog
+      ref={dialog}
+      className="mt-3 lg:mt-6 p-2 lg:p-4 border border-[#333] rounded-md bg-stone-50 text-center text-xs lg:text-lg"
+    >
       <form method="dialog">
         <InputElement id="name" type="text">
           Project name
