@@ -10,13 +10,11 @@ export default function CreateProjectModal({ ref, handleProjectAdd }) {
       open() {
         dialog.current.showModal();
       },
-      close() {
-        dialog.current.close();
-      },
     };
   });
   function clearForm() {
     form.current.reset();
+    setFieldsEmpty(false);
     dialog.current.close();
   }
   function handleSubmit(e) {
@@ -35,7 +33,6 @@ export default function CreateProjectModal({ ref, handleProjectAdd }) {
       description: description,
       date: date,
       tasks: [],
-      active: false,
     });
     clearForm();
   }
