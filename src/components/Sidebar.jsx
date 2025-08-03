@@ -1,12 +1,8 @@
-import { useRef } from "react";
-import CreateProjectModal from "./CreateProjectModal.jsx";
 import ProjectList from "./ProjectList.jsx";
-export default function Sidebar() {
-  const dialog = useRef();
+export default function Sidebar({ projects, dialog }) {
   return (
     <>
-      <CreateProjectModal ref={dialog} />
-      <aside className="flex-[1] lg:self-end lg:h-[95vh] text-center bg-[#111] lg:rounded-tr-md  text-[#eee]">
+      <aside className="flex-[1] lg:self-end lg:h-[95vh] text-center bg-[#111] lg:rounded-tr-md  text-[#eee] shadow-lg">
         <div className="projects">
           <h2 className="mt-4 lg:mt-6 text-md  lg:text-3xl uppercase font-bold">
             Your projects
