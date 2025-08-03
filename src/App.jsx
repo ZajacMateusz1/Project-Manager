@@ -4,17 +4,36 @@ import Project from "./components/Project.jsx";
 import CreateProjectModal from "./components/CreateProjectModal.jsx";
 function App() {
   const [projects, setProjects] = useState([]);
+  const [activeProjectId, setActiveProjectId] = useState(null);
   const dialog = useRef();
   function handleProjectAdd(projectObj) {
     setProjects((prevProjects) => {
       return [...prevProjects, projectObj];
     });
   }
+  function handleActiveProjectClick(id) {
+    setActiveProjectId(id);
+  }
+  function deleteProject(id) {
+    setProjects((prevProjects) => {
+      return prevProjects.filter((project) => project.id !== id);
+    });
+  }
   return (
     <div className="container flex flex-col md:flex-row min-h-screen ">
       <CreateProjectModal ref={dialog} handleProjectAdd={handleProjectAdd} />
-      <Sidebar projects={projects} dialog={dialog} />
-      <Project projects={projects} dialog={dialog} />
+      <Sidebar
+        projects={projects}
+        dialog={dialog}
+        activeProjectId={activeProjectId}
+        handleActiveProjectClick={handleActiveProjectClick}
+      />
+      <Project
+        projects={projects}
+        dialog={dialog}
+        activeProjectId={activeProjectId}
+        deleteProject={deleteProject}
+      />
     </div>
   );
 }

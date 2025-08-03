@@ -1,5 +1,10 @@
 import ProjectList from "./ProjectList.jsx";
-export default function Sidebar({ projects, dialog }) {
+export default function Sidebar({
+  projects,
+  dialog,
+  activeProjectId,
+  handleActiveProjectClick,
+}) {
   return (
     <>
       <aside className="flex-[1] lg:self-end lg:h-[95vh] text-center bg-[#111] lg:rounded-tr-md  text-[#eee] shadow-lg">
@@ -14,7 +19,11 @@ export default function Sidebar({ projects, dialog }) {
             Add project
           </button>
         </div>
-        <ProjectList projects={projects} />
+        <ProjectList
+          projects={projects}
+          activeProjectId={activeProjectId}
+          handleActiveProjectClick={handleActiveProjectClick}
+        />
       </aside>
     </>
   );
