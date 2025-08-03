@@ -3,7 +3,7 @@ export default function Projct({ dialog }) {
   return (
     <main className="flex-[4] flex flex-col justify-center items-center text-sm lg:text-lg">
       <div className="img-wrapper w-[25%] mb-2">
-        <img src={noProjects} alt="Graphic showing no projects " />
+        <img src={noProjects} alt="Graphic showing no projects" />
       </div>
       <p>You have not selected any projects</p>
       <p>Select a project or create a new one</p>

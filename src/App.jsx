@@ -5,9 +5,14 @@ import CreateProjectModal from "./components/CreateProjectModal.jsx";
 function App() {
   const [projects, setProjects] = useState([]);
   const dialog = useRef();
+  function handleProjectAdd(projectObj) {
+    setProjects((prevProjects) => {
+      return [...prevProjects, projectObj];
+    });
+  }
   return (
     <div className="container flex flex-col md:flex-row min-h-screen ">
-      <CreateProjectModal ref={dialog} />
+      <CreateProjectModal ref={dialog} handleProjectAdd={handleProjectAdd} />
       <Sidebar projects={projects} dialog={dialog} />
       <Project projects={projects} dialog={dialog} />
     </div>

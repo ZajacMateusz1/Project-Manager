@@ -14,7 +14,7 @@ export default function Sidebar({ projects, dialog }) {
             Add project
           </button>
         </div>
-        <ProjectList />
+        <ProjectList projects={projects} />
       </aside>
     </>
   );

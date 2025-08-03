@@ -6,9 +6,9 @@ export default function InputElement({ children, type, id, multiline }) {
         {children}
       </label>
       {multiline ? (
-        <textarea className={`${styles}`} id={id} rows="2"></textarea>
+        <textarea className={`${styles}`} id={id} name={id} rows="2"></textarea>
       ) : (
-        <input type={type} id={id} className={`${styles}`} />
+        <input type={type} id={id} name={id} className={`${styles}`} />
       )}
     </div>
   );

@@ -1,11 +1,9 @@
-export default function ProjectList() {
+export default function ProjectList({ projects }) {
   return (
     <ol>
-      <li>Project 1</li>
-      <li>Project 2</li>
-      <li>Project 3</li>
-      <li>Project 4</li>
-      <li>Project 5</li>
+      {projects.map((project) => {
+        return <li key={project.id}>{project.name}</li>;
+      })}
     </ol>
   );
 }
