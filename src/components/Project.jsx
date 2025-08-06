@@ -5,6 +5,8 @@ export default function Project({
   dialog,
   activeProjectId,
   deleteProject,
+  handleAddTask,
+  handleDeleteTask,
 }) {
   function getActiveProject() {
     return projects.find((project) => project.id === activeProjectId);
@@ -16,6 +18,8 @@ export default function Project({
         <ProjectSelected
           activeProject={activeProject}
           deleteProject={deleteProject}
+          handleAddTask={handleAddTask}
+          handleDeleteTask={handleDeleteTask}
         />
       ) : (
         <NoProjectSelected dialog={dialog} />

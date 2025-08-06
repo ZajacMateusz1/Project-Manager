@@ -19,6 +19,30 @@ function App() {
       return prevProjects.filter((project) => project.id !== id);
     });
   }
+  function handleAddTask(id, taskText) {
+    setProjects((prevProjects) => {
+      return prevProjects.map((project) => {
+        return project.id === id
+          ? {
+              ...project,
+              tasks: [...project.tasks, { id: Date.now(), taskText: taskText }],
+            }
+          : project;
+      });
+    });
+  }
+  function handleDeleteTask(projectId, taskId) {
+    setProjects((prevProjects) => {
+      return prevProjects.map((project) => {
+        return project.id === projectId
+          ? {
+              ...project,
+              tasks: project.tasks.filter((task) => task.id !== taskId),
+            }
+          : project;
+      });
+    });
+  }
   return (
     <div className="container flex flex-col md:flex-row min-h-screen ">
       <CreateProjectModal ref={dialog} handleProjectAdd={handleProjectAdd} />
@@ -33,6 +57,8 @@ function App() {
         dialog={dialog}
         activeProjectId={activeProjectId}
         deleteProject={deleteProject}
+        handleAddTask={handleAddTask}
+        handleDeleteTask={handleDeleteTask}
       />
     </div>
   );
