@@ -44,7 +44,7 @@ function App() {
     });
   }
   return (
-    <div className="container flex flex-col md:flex-row min-h-screen ">
+    <div className="container flex flex-col md:flex-row min-h-screen lg:gap-10 ">
       <CreateProjectModal ref={dialog} handleProjectAdd={handleProjectAdd} />
       <Sidebar
         projects={projects}

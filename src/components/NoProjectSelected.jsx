@@ -1,7 +1,7 @@
 import noProjects from "../assets/no-projects.png";
 export default function NoProjectSelected({ dialog }) {
   return (
-    <>
+    <main className="flex-[4] flex flex-col justify-center items-center text-sm lg:text-lg">
       <div className="img-wrapper w-[25%] mb-2">
         <img src={noProjects} alt="Graphic showing no projects" />
       </div>
@@ -13,6 +13,6 @@ export default function NoProjectSelected({ dialog }) {
       >
         Create new project
       </button>
-    </>
+    </main>
   );
 }

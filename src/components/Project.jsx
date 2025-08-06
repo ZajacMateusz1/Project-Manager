@@ -12,18 +12,14 @@ export default function Project({
     return projects.find((project) => project.id === activeProjectId);
   }
   const activeProject = getActiveProject();
-  return (
-    <main className="flex-[4] flex flex-col justify-center items-center text-sm lg:text-lg">
-      {activeProject ? (
-        <ProjectSelected
-          activeProject={activeProject}
-          deleteProject={deleteProject}
-          handleAddTask={handleAddTask}
-          handleDeleteTask={handleDeleteTask}
-        />
-      ) : (
-        <NoProjectSelected dialog={dialog} />
-      )}
-    </main>
+  return activeProject ? (
+    <ProjectSelected
+      activeProject={activeProject}
+      deleteProject={deleteProject}
+      handleAddTask={handleAddTask}
+      handleDeleteTask={handleDeleteTask}
+    />
+  ) : (
+    <NoProjectSelected dialog={dialog} />
   );
 }

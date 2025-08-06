@@ -54,7 +54,7 @@ export default function CreateProjectModal({ ref, handleProjectAdd }) {
         <p
           className={`${
             fieldsEmpty ? "text-red-700" : "text-transparent"
-          } mt-2 font-semibold`}
+          } mt-2 font-semibold select-none`}
         >
           Fields cannot be empty!
         </p>

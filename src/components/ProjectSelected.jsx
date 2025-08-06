@@ -18,14 +18,28 @@ export default function ProjectSelected({
     input.current.value = "";
   }
   return (
-    <>
-      <div className="info">
-        <h1>{activeProject.name}</h1>
-        <p>{activeProject.date}</p>
-        <p>{activeProject.description}</p>
-        <button onClick={() => deleteProject(activeProject.id)}>Delete</button>
+    <main className="flex-[4] flex flex-col gap-4 lg:gap-16 justify-beetwen text-xs lg:text-lg p-4 lg:pt-10">
+      <div className="info  border-b-2 border-black">
+        <header className="flex justify-between">
+          <h2 className="text-base lg:text-6xl font-bold capitalize">
+            {activeProject.name}
+          </h2>
+          <button
+            className="text-[0.65rem] lg:text-base"
+            onClick={() => deleteProject(activeProject.id)}
+          >
+            Delete
+          </button>
+        </header>
+        <p className="pl-2  lg:pl-8 lg:pt-4 text-gray-500 text-[0.6rem] lg:text-base">
+          {activeProject.date}
+        </p>
+        <h3 className="mt-2 lg:mt-4 text-sm lg:text-3xl font-semibold">
+          About project
+        </h3>
+        <p className="lg:text-lg">{activeProject.description}</p>
       </div>
-      <div className="tasks">
+      <div className="tasks text-center">
         <h2>Tasks</h2>
         <input
           type="text"
@@ -33,7 +47,11 @@ export default function ProjectSelected({
           ref={input}
         />
         <button onClick={handleAddTaskClick}>Add task</button>
-        <p className={`${emptyInput ? "text-red-700" : "text-transparent"}`}>
+        <p
+          className={`${
+            emptyInput ? "text-red-700" : "text-transparent"
+          } select-none`}
+        >
           Input cannot be empty
         </p>
         <h3>Task list</h3>
@@ -54,6 +72,6 @@ export default function ProjectSelected({
           })}
         </ol>
       </div>
-    </>
+    </main>
   );
 }
