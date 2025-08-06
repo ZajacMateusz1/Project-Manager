@@ -18,7 +18,7 @@ export default function ProjectSelected({
     input.current.value = "";
   }
   return (
-    <main className="flex-[4] flex flex-col gap-4 lg:gap-16 justify-beetwen text-xs lg:text-lg p-4 lg:pt-10">
+    <main className="flex-[4] flex flex-col gap-4 lg:gap-16 text-xs lg:text-lg p-4 lg:pt-10">
       <div className="info  border-b-2 border-black">
         <header className="flex justify-between">
           <h2 className="text-base lg:text-6xl font-bold uppercase">
