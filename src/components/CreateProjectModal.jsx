@@ -49,7 +49,7 @@ export default function CreateProjectModal({ ref, handleProjectAdd }) {
           Description
         </InputElement>
         <InputElement id="date" type="date">
-          Date of creation
+          Date of due
         </InputElement>
         <p
           className={`${
